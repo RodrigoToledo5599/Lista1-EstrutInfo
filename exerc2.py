@@ -23,10 +23,11 @@ def exerc2(nome_arq = 'in2.txt'):
     pilha = Pilha()
     
     arq.seek(0,0)
-    for i in range(100):
+    for i in range(sizeFile):
         pilha.push(arq.readline())
+        sizeAtual -= 1
         
-        if(pilha.size() == 50):
+        if(pilha.size() == 50 or sizeAtual == 0):
             for i in range(50):
                 print(pilha.pop())
 
