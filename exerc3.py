@@ -9,20 +9,29 @@ def exerc3(nome_arq = "in3.txt"):
 # armazene mais de 43 linhas da entrada, em qualquer momento.
 
     try:
-        arq = open(nome_arq, "r")
+        arq = open(nome_arq, "r", encoding ="utf-8")
     except IOError:
         print("Erro ao abrir arquivo de entrada.")
         return
-    # Escreva aqui sua resposta para o exercício 3. Não esqueça de usar a função strip()
-    # para remover os espaços em branco no início e no fim da string.
-    # ATENÇÃO: não use a função readlines() para ler o arquivo de entrada.
-    # Sua saída deve ser escrita usando a função print().
-    # IMPORTANTE: Seu código nunca deverá ter armazenado mais de 43 linhas.
-    # Você deve usar a estrutura simplificada Pilha, Fila, Deque, Sset, Uset ou FilaPrioridade
+    deque = Deque()
+    sizeFile = len(arq.readlines())
+    linha =""
+    ultimaLinha=""
+
+    arq.seek(0,0)
+    while(sizeFile > 0):
+        linha = arq.readline()
+        deque.add_last(linha)
+        
+        sizeFile -=1
+        
+        if(linha == "\n"):
+            print(deque.items,"\n")
+
+        if(deque.size() > 42):
+            deque.remove_first()
 
 
-    # Fim da sua resposta para o exercício 3.
-    # fechar arquivo de entrada
     arq.close()
 
 if __name__ == "__main__":
