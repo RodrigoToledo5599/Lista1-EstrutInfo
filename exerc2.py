@@ -11,22 +11,27 @@ def exerc2(nome_arq = 'in2.txt'):
    # Seu código nunca deverá ter armazenado mais de 50 linhas.
 
     try:
-        arq = open(nome_arq, "r")
+        arq = open(nome_arq, "r" ,encoding="utf-8")
     except IOError:
         print("Erro ao abrir arquivo de entrada.")
         return
 
-    # Escreva aqui sua resposta para o exercício 2. Não esqueça de usar a função strip()
-    # para remover os espaços em branco no início e no fim da string.
-    # ATENÇÃO: não use a função readlines() para ler o arquivo de entrada.
-    # Sua saída deve ser escrita usando a função print().
-    # IMPORTANTE: Seu código nunca deverá ter armazenado mais de 50 linhas.
-    # Você deve usar a estrutura simplificada Pilha, Fila, Deque, SSet, USet ou FilaPrioridade
+    
+
+    sizeFile = len(arq.readlines())
+    sizeAtual = sizeFile
+    pilha = Pilha()
+    
+    arq.seek(0,0)
+    for i in range(100):
+        pilha.push(arq.readline())
+        
+        if(pilha.size() == 50):
+            for i in range(50):
+                print(pilha.pop())
 
 
-    # Fim da sua resposta para o exercício 2.
-
-    # fechar arquivo de entrada
+    
     arq.close()
 
 if __name__ == "__main__":
