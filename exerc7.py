@@ -6,8 +6,14 @@ def exerc7():
     # tenham o mesmo tamanho, resolva sua ordem usando a regra de ordenação alfabética. 
     # as linhas duplicadas devem ser impressas o mesmo número de vezes 
     # que aparecem na entrada.
+    ...
+    arq = open("in7.txt", "r", encoding="utf-8")
 
 
+    
+
+
+    arq.close()
 
 if __name__ == "__main__":
     exerc7()

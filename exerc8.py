@@ -10,17 +10,24 @@ def exerc8(nome_arq = "in8.txt"):
         print("Erro ao abrir arquivo de entrada.")
         return
     
-    # Escreva aqui sua resposta para o exercício 8. Não esqueça de usar a função strip()
-    # para remover os espaços em branco no início e no fim da string.
-    # ATENÇÃO: não use a função readlines() para ler o arquivo de entrada.
-    # Sua saída deve ser escrita usando a função print().
-    # Você deve usar a estrutura simplificada Pilha, Fila, Deque, SSet, USet ou FilaPrioridade
+    arq.seek(0,0)
+    fila = Fila()
+    
+    for linha in arq:
+
+        if(fila is None):
+            ...
+
+        if(len(linha)%2 ==0):
+            fila.add(linha.strip())
+            print(fila.remove())
+        else:
+            ...
 
 
-    # Fim da sua resposta para o exercício 8.
 
-    # fechar arquivo de entrada
     arq.close()
+    print(fila)
 
 if __name__ == "__main__":
     exerc8()
