@@ -16,7 +16,7 @@ def exerc3(nome_arq = "in3.txt"):
     deque = Deque()
     sizeFile = len(arq.readlines())
     linha =""
-    ultimaLinha=""
+    
 
     arq.seek(0,0)
     while(sizeFile > 0):

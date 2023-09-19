@@ -19,6 +19,12 @@ def exerc4(nome_arq = "in4.txt"):
     # Sua saída deve ser escrita usando a função print().
     # Você deve usar a estrutura simplificada Pilha, Fila, Deque, SSet, USet ou FilaPrioridade
 
+    sset = SSet()
+
+    
+
+
+
 
     # Fim da sua resposta para o exercício 4.
     # fechar arquivo de entrada

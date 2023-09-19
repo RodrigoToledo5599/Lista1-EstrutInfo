@@ -10,15 +10,20 @@ def exerc9(nome_arq = 'in9.txt'):
 
     # criar uma fila vazia
     fila = FilaAleatoria()
+    option = 0
 
-    arq = open(nome_arq, "r")
+
+    arq = open(nome_arq, "r", encoding="utf-8")
+    arq.seek(0,0)
     # ler cada linha do arquivo de entrada e inserir no conjunto
     for linha in arq:
         fila.add(linha.strip())
 
     # imprimir cada linha
     while fila.size() > 0:
-        print(fila.remove())
+        f = fila.remove()
+
+        print(f)
 
     # fechar arquivo de entrada
     arq.close()
